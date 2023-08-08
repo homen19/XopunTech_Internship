@@ -1,0 +1,78 @@
+.table-container{
+    width: 90%;
+    height: 580px;
+    border: 1px solid green;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+table{
+    width: 100%;
+    /* border: 1px solid blue; */
+    border-collapse: collapse;
+}
+table thead{
+    background-color: #CAD5E2;
+}
+table thead tr th {
+    width: 400px;
+    height: 50px;
+
+}
+table tbody, thead{
+    width: 100%;
+    display: block;
+}
+
+tbody tr td{
+    width: 415px;
+    text-align: center;
+    border: 1px solid black;
+    border-right: none;
+    background-color: aliceblue;
+    /* border-left: none; */
+}
+tbody tr td button{ 
+   width: 50px;
+   height: 30px;
+   background-color: #03203C;
+   border: none;
+   border-radius: 5px;
+   font-weight: 600;
+   color: #fff;
+   margin: 2px;
+}
+tbody tr td #btn-2{
+    background-color: #FF6263;
+    width: 60px;
+}
+tbody tr td button:hover{
+    border: 2px solid black;
+    cursor: pointer;
+}
+tbody{
+    height: 460px;
+    border-bottom: 1px solid black;
+    overflow-y: auto;
+    
+}
+
+.pagination-container{
+    width: 35%;
+    height: 50px;
+    border: 1px solid green;
+   float: right;
+   margin: 10px 20px;
+   border-radius: 5px;
+   background-color: antiquewhite;
+}
+.pagination-container .pagination{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.pagination-container .pagination li a{
+    text-decoration: none;
+}

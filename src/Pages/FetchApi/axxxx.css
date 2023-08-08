@@ -1,0 +1,32 @@
+.form-data{
+    width: 100%;
+    height: 300px;
+    /* border: 1px solid red; */
+    text-align: center;
+    padding: 30px;
+}
+.form-data input[type=text]{
+    width: 250px;
+    height: 40px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+.form-data button{
+    width: 100px;
+    height: 40px;
+    background-color: #3B71CA;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    color: #fff;
+}
+.form-data button:hover{
+    font-weight: 700;
+    border: 1px solid black;
+}
+
+
+/* --data show ------------ */
+

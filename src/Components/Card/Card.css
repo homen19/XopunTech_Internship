@@ -1,0 +1,71 @@
+.card-main {
+    width: 25%;
+    height: 320px;
+    /* border: 1px solid red; */
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #1D5D9B;
+    color: #fff;
+}
+
+.card-main .img-container {
+    width: 150px;
+    /* height: 150px; */
+    margin: 20px auto;
+    border-radius: 50%;
+}
+
+.card-main .img-container img {
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+.card-main h2,
+p {
+    text-align: center;
+}
+
+.card-main .operation-button {
+    width: 80%;
+    height: 30px;
+    /* border: 1px solid red; */
+    margin: auto;
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+}
+
+.card-main .operation-button .Delete {
+    width: 80px;
+    height: 30px;
+    background-color: #F31559;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+.card-main .operation-button .Edit {
+    width: 80px;
+    height: 30px;
+    background-color: #54B4D3;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 600px) {
+    .card-main {
+        width: 90%;
+        padding-top: 10px;
+        margin-top: 10px;
+
+    }
+
+    .card-main .img-container {
+        margin-top: 20px
+    }
+}
