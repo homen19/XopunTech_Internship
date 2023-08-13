@@ -2,12 +2,12 @@ import React from 'react'
 import "./CustomTable.css";
 import { useState } from 'react';
 import axios from 'axios';
-import { Modal } from './Components/Modal';
+
 
 
 export const CustomTable = (props) => {
 
-  console.log(props.columns);
+
 
   const [currentPage, setCurrentPage] = useState(1);
   const recordPerPage = 7;
@@ -16,8 +16,6 @@ export const CustomTable = (props) => {
   const records = props.data.slice(firstIndex, lastIndex);
   const nPage = Math.ceil(props.data.length / recordPerPage);
   const numbers = [...Array(nPage + 1).keys()].slice(1);
-
-  const [isEditing, setisEditing] = useState(false);
 
 
   const prePage = () => {
@@ -35,27 +33,7 @@ export const CustomTable = (props) => {
     setCurrentPage(id)
   }
 
-  const handleEdit = (id) => {
-    setisEditing(true);
-  }
-
-
-  const handleDelete = (deleteID) => {
-    // alert(deleteID)
-    axios.delete(`https://jsonplaceholder.typicode.com/posts/${deleteID}`)
-      .then(res => {
-        console.log("Data deleted :", res);
-        console.log(res.data);
-
-        const posts = props.data.filter(item => item.id !== deleteID);
-        props.setData(posts);
-        alert("Deleted!!!")
-
-      })
-      .catch(err => console.log(err))
-  };
-
-
+  
 
 
   return (
@@ -66,28 +44,29 @@ export const CustomTable = (props) => {
             <tr>
               <tr>
                 {props.columns.map((head, headID) =>
-                  <th key={headID} >{head.title}</th>)}
+                  <th key={headID} >{head.title}{head.icon}</th>)}
               </tr>
-              {/* <th>ID</th>
-              <th>USER ID</th>
-              <th>TITLE</th>
-              <th>BODY</th>
-              <th>ACTION</th> */}
             </tr>
           </thead>
           <tbody>
             {
-              records.map((d, i) => (
-                <tr key={i}>
-                  <td>{d.id}</td>
-                  <td>{d.userId}</td>
+              records.map((item) => (
+                <tr key={item.id}>
+                  {props.columns.map((column) => {
+                    
+                    return(
+                      <td key={column.name}>
+                      {column.render? (
+                        column.render(item)
+                        
+                      ) : (
 
-                  <td>{d.title}</td>
-                  <td>{d.body}</td>
-                  <td>
-                    <button id='btn-1' onClick={() => handleEdit(d.id)} >Edit</button>
-                    <button id='btn-2' onClick={() => handleDelete(d.id)}>Delete</button>
-                  </td>
+                        item[column.dataIndex]
+                      )}
+                    </td>
+                    )
+                  })}
+
                 </tr>
               ))
             }
@@ -112,7 +91,7 @@ export const CustomTable = (props) => {
 
           </ul>
         </div>
-        {/* <Modal /> */}
+        
 
       </div>
     </>

@@ -27,6 +27,26 @@
     border: 1px solid black;
 }
 
+/* ---------table action button----------- */
+.btn-edit, .btn-delete{
+    width: 80px;
+    height: 30px;
+    margin: 2px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-edit{
+    background-color: #120E43;
+    color: #fff;
+}
+.btn-delete{
+    background-color: #DE4839;
+    color: #fff;
+}
+
+
+
 
 /* --data show ------------ */
 

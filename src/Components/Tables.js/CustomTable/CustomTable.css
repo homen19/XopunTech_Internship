@@ -1,37 +1,47 @@
-.table-container{
+.table-container {
     width: 90%;
     height: 580px;
-    border: 1px solid green;
+    border: 2px solid green;
+    -webkit-box-shadow: 1px 1px 9px -1px rgba(36, 43, 46, 1);
+    -moz-box-shadow: 1px 1px 9px -1px rgba(36, 43, 46, 1);
+    box-shadow: 1px 1px 9px -1px rgba(36, 43, 46, 1);
     border-radius: 5px;
     margin: 20px auto;
+    box-shadow: 4px 9px 20px -6px rgba(0, 0, 0, 0.1);
 }
-table{
+
+table {
     width: 100%;
     /* border: 1px solid blue; */
     border-collapse: collapse;
 }
-table thead{
+
+table thead {
     background-color: #CAD5E2;
 }
+
 table thead tr th {
     width: 400px;
     height: 50px;
 
 }
-table tbody, thead{
+
+table tbody,
+thead {
     width: 100%;
     display: block;
 }
 
-tbody tr td{
+tbody tr td {
     width: 415px;
     text-align: center;
     border: 1px solid black;
     border-right: none;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     /* border-left: none; */
 }
-tbody tr td button{ 
+
+/* tbody tr td button{ 
    width: 50px;
    height: 30px;
    background-color: #03203C;
@@ -40,32 +50,37 @@ tbody tr td button{
    font-weight: 600;
    color: #fff;
    margin: 2px;
-}
-tbody tr td #btn-2{
-    background-color: #FF6263;
+} */
+/* tbody tr td .btn-delete{
+    background-color: #D11A2A;
     width: 60px;
-}
-tbody tr td button:hover{
+} */
+/* tbody tr td button:hover{
     border: 2px solid black;
     cursor: pointer;
-}
-tbody{
+} */
+tbody {
     height: 460px;
     border-bottom: 1px solid black;
     overflow-y: auto;
-    
+
 }
 
-.pagination-container{
+
+.pagination-container {
     width: 35%;
     height: 50px;
-    border: 1px solid green;
-   float: right;
-   margin: 10px 20px;
-   border-radius: 5px;
-   background-color: antiquewhite;
+    /* border: 1px solid green; */
+    -webkit-box-shadow: 1px 1px 9px -1px rgba(36, 43, 46, 1);
+    -moz-box-shadow: 1px 1px 9px -1px rgba(36, 43, 46, 1);
+    box-shadow: 1px 1px 9px -1px rgba(36, 43, 46, 1);
+    float: right;
+    margin: 10px 20px;
+    border-radius: 5px;
+    background-color: antiquewhite;
 }
-.pagination-container .pagination{
+
+.pagination-container .pagination {
     display: flex;
     list-style: none;
     justify-content: space-between;
@@ -73,6 +88,7 @@ tbody{
     padding-left: 10px;
     padding-right: 10px;
 }
-.pagination-container .pagination li a{
+
+.pagination-container .pagination li a {
     text-decoration: none;
 }

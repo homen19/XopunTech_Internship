@@ -7,21 +7,25 @@ import { useState } from 'react';
 export const Counter = () => {
     const initialCounts = 0;
     const [count, setCount] = useState(initialCounts);
-    useEffect(()=>{
-        if(count >= 1){
+    useEffect(() => {
+        if (count >= 1) {
             console.log("useEffect Hooks");
             document.title = `Count (${count})`;
         }
-        
+
     }, [count]);
 
-    const incrementByFive = ()=>{
-        for(let i = 0; i<5; i++) {
-           setCount(prevCount => prevCount + 1);
+    const incrementByFive = () => {
+        for (let i = 0; i < 5; i++) {
+            setCount(prevCount => prevCount + 1);
         }
     }
     return (
-        <div>
+        <div
+            style={{
+                marginTop: '100px'
+            }}
+        >
             <Box
                 sx={{
                     width: 300,
@@ -41,13 +45,31 @@ export const Counter = () => {
                     style={{
                         textAlign: 'center'
                     }}
-                >{count >=0 ? count: setCount(initialCounts)}</h1>
-                <Button variant="contained" endIcon={<AddIcon />} onClick={() => setCount(count + 1)} >Increment</Button>
-                <Button variant="contained" endIcon={<RemoveIcon />} onClick={() => setCount(count - 1)}>Decrement</Button><br />
-                <Button variant="contained" startIcon={<AddIcon />} onClick={incrementByFive}>5</Button>
-                <Button variant="contained" onClick={()=>setCount(initialCounts)}>Reset</Button>
-            </Box>
+                >{count >= 0 ? count : setCount(initialCounts)}</h1>
+                <div
+                    style={{
+                        width: '80%',
+                        margin: '20px auto',
+                        display: 'flex',
+                        justifyContent: 'space-between'
+                    }}
+                >
+                    <Button variant="contained" endIcon={<AddIcon />} onClick={() => setCount(count + 1)} ></Button>
+                    <Button variant="contained" endIcon={<RemoveIcon />} onClick={() => setCount(count - 1)}></Button>
+                </div>
+                <div
+                    style={{
+                        width: '80%',
+                        margin: '20px auto',
+                        display: 'flex',
+                        justifyContent: 'space-between'
+                    }}
+                >
+                    <Button variant="contained" startIcon={<AddIcon />} onClick={incrementByFive}>5</Button>
+                    <Button variant="contained" onClick={() => setCount(initialCounts)}>Reset</Button>
+                </div>
+            </Box >
 
-        </div>
+        </div >
     )
 }

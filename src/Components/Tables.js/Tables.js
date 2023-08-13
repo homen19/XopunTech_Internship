@@ -86,11 +86,12 @@ const Tables = (props) => {
     return (
         <>
             <div style={{
+                width:'100%',
                 height: '500px'
             }}>
                 <Table
                     style={{
-                        width: '98%',
+                        width: '100%',
                         margin: '20px auto',
                         backgroundColor: '#FFEECC'
                     }}
