@@ -21,3 +21,11 @@
 11. Another things added that are two caretUp and caretDown button with the userId based on these we can sort the table records in asecending or descending order.
 
 ![Screenshot 2023-08-13 212802](https://github.com/homen19/XopunTech_Internship/assets/65844503/c9eb0db6-babc-4e69-990b-37ef894aee42)
+
+12. Added the filter functionality based on id that means greater than id 5, greater than id 25 also the title based on the greater than 20 character title.
+![1](https://github.com/homen19/XopunTech_Internship/assets/65844503/34e58918-981d-40bd-8354-14473561ba35)
+
+13. Added the search functionality in the user_id. Here we can search the user_id. In our table many records which have the same user_id so we can search it.
+![2](https://github.com/homen19/XopunTech_Internship/assets/65844503/352b5016-d58c-42c6-a861-3be5c66de4df)
+
+
