@@ -13,7 +13,7 @@ export const CustomTable = (props) => {
   const recordPerPage = 7;
   const lastIndex = currentPage * recordPerPage;
   const firstIndex = lastIndex - recordPerPage;
-  const records = props.data.slice(firstIndex, lastIndex);
+  const records = props.data.slice(firstIndex, lastIndex) || [];
   const nPage = Math.ceil(props.data.length / recordPerPage);
   const numbers = [...Array(nPage + 1).keys()].slice(1);
 
@@ -33,7 +33,7 @@ export const CustomTable = (props) => {
     setCurrentPage(id)
   }
 
-  
+
 
 
   return (
@@ -41,34 +41,36 @@ export const CustomTable = (props) => {
       <div className="table-container">
         <table>
           <thead>
-            <tr>
               <tr>
                 {props.columns.map((head, headID) =>
                   <th key={headID} >{head.title}{head.icon}</th>)}
               </tr>
-            </tr>
+            
           </thead>
           <tbody>
+          
             {
-              records.map((item) => (
-                <tr key={item.id}>
-                  {props.columns.map((column) => {
-                    
-                    return(
-                      <td key={column.name}>
-                      {column.render? (
-                        column.render(item)
-                        
-                      ) : (
+              records.map((item) => {
+                return (
+                  <tr key={item.id}>
+                    {props.columns.map((column) => {
 
-                        item[column.dataIndex]
-                      )}
-                    </td>
-                    )
-                  })}
+                      return (
+                        <td key={column.dataIndex}>
+                          {column.render ? (
+                            column.render(item)
 
-                </tr>
-              ))
+                          ) : (
+
+                            item[column.dataIndex]
+                          )}
+                        </td>
+                      )
+                    })}
+
+                  </tr>
+                )
+              })
             }
           </tbody>
 
@@ -91,7 +93,7 @@ export const CustomTable = (props) => {
 
           </ul>
         </div>
-        
+
 
       </div>
     </>
